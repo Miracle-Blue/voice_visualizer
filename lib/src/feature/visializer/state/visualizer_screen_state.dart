@@ -13,8 +13,6 @@ abstract class VisualizerScreenState extends State<VisualizerScreen> with Ticker
     audioSource ??= await soLoud.loadAsset('assets/music/skyfall.mp3');
     soundHandle ??= await soLoud.play(audioSource!);
 
-    soLoud.setFftSmoothing(.95);
-
     ticker ??= Ticker((_) => viController.update())..start().ignore();
   }
 
@@ -37,6 +35,7 @@ abstract class VisualizerScreenState extends State<VisualizerScreen> with Ticker
     viController = VisualizerController(audioData: AudioData(GetSamplesKind.linear));
 
     soLoud = SoLoud.instance;
+    soLoud.setFftSmoothing(.95);
   }
 
   @override
