@@ -20,7 +20,7 @@ class ViSpectrum extends CustomPainter {
 
     for (var i = 0; i < fftData.length; i++) {
       // FFT data typically contains values between 0.0 and 1.0
-      final barHeight = fftData[i] * size.height;
+      final barHeight = (fftData[i] * size.height).clamp(.5, size.height);
 
       canvas.drawRect(
         .fromLTWH(
