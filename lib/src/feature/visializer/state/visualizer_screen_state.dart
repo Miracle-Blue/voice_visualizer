@@ -44,8 +44,6 @@ abstract class VisualizerScreenState extends State<VisualizerScreen> with Ticker
     ticker?.dispose();
     ticker = null;
 
-    soLoud.deinit();
-
     viController.dispose();
 
     super.dispose();

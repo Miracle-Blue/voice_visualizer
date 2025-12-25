@@ -32,6 +32,13 @@ class _AppState extends State<App> {
   }
 
   @override
+  void dispose() {
+    SoLoud.instance.deinit();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) => MaterialApp(
     title: 'Voice Visualizer',
     theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
