@@ -1,11 +1,14 @@
 import 'dart:async';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_soloud/flutter_soloud.dart';
 
+import '../controller/shader_2d_controller.dart';
 import '../controller/visualizer_controller.dart';
 import '../widget/vi_line_sound_bands.dart';
+import '../widget/vi_shader_2d.dart';
 import '../widget/vi_spectrum.dart';
 
 part '../state/visualizer_screen_state.dart';
@@ -46,6 +49,14 @@ class _VisualizerScreenState extends VisualizerScreenState {
             height: 50,
             child: CustomPaint(painter: ViLineSoundBands(viController: viController)),
           ),
+
+          if (shader2D != null)
+            SizedBox.square(
+              dimension: MediaQuery.of(context).size.width * 0.8,
+              child: RepaintBoundary(
+                child: ViShader2D(shader2D: shader2D!, shader2dController: shader2dController),
+              ),
+            ),
         ],
       ),
     ),

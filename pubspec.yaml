@@ -27,3 +27,6 @@ flutter:
 
   assets:
     - assets/music/
+
+  shaders:
+    - assets/shader/voice_vi_2d.frag

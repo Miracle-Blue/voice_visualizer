@@ -28,13 +28,16 @@ class ViLineSoundBands extends CustomPainter {
     for (var i = -2; i < speechBands.length - 2; i++) {
       final barHeight = (speechBands[i + 2] * size.height).clamp(3.0, size.height);
 
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(
-          Rect.fromLTWH(size.width / 2 + (i * 1.5) * barWidth, (size.height - barHeight) / 2, barWidth, barHeight),
-          const Radius.circular(50),
-        ),
-        linePaint,
-      );
+      canvas
+        ..save()
+        ..drawRRect(
+          RRect.fromRectAndRadius(
+            Rect.fromLTWH(size.width / 2 + (i * 1.5) * barWidth, (size.height - barHeight) / 2, barWidth, barHeight),
+            const Radius.circular(50),
+          ),
+          linePaint,
+        )
+        ..restore();
     }
   }
 
