@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_soloud/flutter_soloud.dart';
 import 'package:logbook/logbook.dart';
 
-import '../../feature/visializer/screen/visualizer_screen.dart';
+import '../../feature/visualizer/screen/visualizer_screen.dart';
 
 /// {@template app}
 /// App widget.

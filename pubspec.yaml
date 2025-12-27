@@ -16,6 +16,8 @@ dependencies:
 
   logbook: ^0.3.3
 
+  shader_buffers: ^1.1.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
