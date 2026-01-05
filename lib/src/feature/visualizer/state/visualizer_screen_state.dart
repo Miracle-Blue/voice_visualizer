@@ -7,6 +7,7 @@ abstract class VisualizerScreenState extends State<VisualizerScreen> with Ticker
   AudioSource? audioSource;
 
   ui.FragmentShader? shader2D;
+  ui.FragmentShader? shader3D;
 
   late SoLoud soLoud;
   late VisualizerController viController;
@@ -35,6 +36,7 @@ abstract class VisualizerScreenState extends State<VisualizerScreen> with Ticker
 
   Future<void> loadShader() async {
     shader2D ??= (await ui.FragmentProgram.fromAsset('assets/shader/voice_vi_2d.frag')).fragmentShader();
+    shader3D ??= (await ui.FragmentProgram.fromAsset('assets/shader/voice_vi_3d.frag')).fragmentShader();
 
     setState(() {});
   }

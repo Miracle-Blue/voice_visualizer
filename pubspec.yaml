@@ -32,3 +32,4 @@ flutter:
 
   shaders:
     - assets/shader/voice_vi_2d.frag
+    - assets/shader/voice_vi_3d.frag
